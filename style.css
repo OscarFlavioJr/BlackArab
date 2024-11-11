@@ -2,6 +2,7 @@
   * {
     padding: 0;
     margin: 0;
+    font-family: "Kanit", serif;
   }
   .head {
     background-color: black;
@@ -35,15 +36,18 @@
     border: 1px solid;
     margin-top: 20px;
     margin-left: 15px;
+    padding-bottom: 10px;
   }
 
   .swiper-slide h1 {
     position: relative;
-    left: 12%;
+    left: 25%;
+    font-weight: 300;
   }
 
   .swiper-slide p {
     position: relative;
+    font-weight: 200;
     left: 39%;
   }
 
@@ -53,10 +57,22 @@
     padding: 15px;
     background-color: #f1ca2f;
     border: none;
-    font-weight: 900;
+    font-family: "Kanit", serif;
+    font-weight: 800;
+    font-style: normal;
   }
 
   .swiper-slide img {
     max-width: 250px;
+  }
+
+  .products {
+    background-color: #e4dfd3;
+    padding-bottom: 30px;
+  }
+
+  .products h1 {
+    position: relative;
+    left: 15px;
   }
 }
