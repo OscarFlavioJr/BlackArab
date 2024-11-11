@@ -1,0 +1,33 @@
+@media screen and (max-width: 900px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .head {
+    background-color: black;
+    min-height: 13vh;
+  }
+
+  .link img {
+    position: absolute;
+    padding-top: 15px;
+    left: 38%;
+    max-width: 85px;
+  }
+
+  .icons img {
+    max-width: 30px;
+    position: absolute;
+    top: 3vh;
+    display: block;
+    left: 5%;
+  }
+
+  #bag {
+    max-width: 30px;
+    position: absolute;
+    top: 2.7vh;
+    display: block;
+    left: 83%;
+  }
+}
