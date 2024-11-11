@@ -30,4 +30,33 @@
     display: block;
     left: 83%;
   }
+
+  .swiper-slide {
+    border: 1px solid;
+    margin-top: 20px;
+    margin-left: 15px;
+  }
+
+  .swiper-slide h1 {
+    position: relative;
+    left: 12%;
+  }
+
+  .swiper-slide p {
+    position: relative;
+    left: 39%;
+  }
+
+  .swiper-slide button {
+    position: relative;
+    left: 32%;
+    padding: 15px;
+    background-color: #f1ca2f;
+    border: none;
+    font-weight: 900;
+  }
+
+  .swiper-slide img {
+    max-width: 250px;
+  }
 }
