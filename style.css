@@ -62,13 +62,15 @@
   .swiper-slide h1 {
     position: relative;
     left: 25%;
-    font-weight: 300;
+    font-size: 30px;
+    font-weight: 600;
+    width: 100%;
   }
 
   .swiper-slide p {
     position: relative;
     font-weight: 200;
-    left: 39%;
+    left: 37%;
   }
 
   .swiper-slide button {
@@ -82,8 +84,14 @@
     font-style: normal;
   }
 
+  .swiper-slide button:hover {
+    background-color: black;
+    color: #f1ca2f;
+    transition: all 0.3s ease-in-out 0.3s;
+  }
+
   .swiper-slide img {
-    max-width: 250px;
+    max-width: 280px;
   }
 
   .products {
@@ -93,7 +101,63 @@
 
   .products h1 {
     position: relative;
-    left: 15px;
-    width: 100px;
+    left: 17%;
+    width: 300px;
+  }
+
+  .modal {
+    position: fixed;
+    z-index: 10000;
+    right: 0;
+    top: 0;
+    width: 70%;
+    min-height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .conteudo {
+    background-color: #e4dfd3;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .close {
+    color: #823d1c;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #item-carrinho li {
+    list-style-type: none;
+    background-image: url(assets/images/icons/logo\ blackarab.svg);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+    padding-left: 30px;
+  }
+
+  #total-container {
+    font-weight: bold;
+    position: absolute;
+    top: 83%;
+    left: 10%;
+    background-color: #136e38;
+    color: #e4dfd3;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  #total {
+    font-weight: bold;
   }
 }
