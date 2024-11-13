@@ -25,9 +25,9 @@
   }
 
   .icons span {
-    position: absolute;
+    position: relative;
     left: 91%;
-    top: 4.5%;
+    top: 35px;
     color: #f1ca2f;
   }
 
@@ -70,7 +70,7 @@
   .swiper-slide p {
     position: relative;
     font-weight: 200;
-    left: 37%;
+    left: 35%;
   }
 
   .swiper-slide button {
