@@ -24,12 +24,32 @@
     left: 5%;
   }
 
+  .icons span {
+    position: absolute;
+    left: 91%;
+    top: 4.5%;
+    color: #f1ca2f;
+  }
+
   #bag {
     max-width: 30px;
     position: absolute;
     top: 2.7vh;
-    display: block;
+    display: inline;
     left: 83%;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  #bag-filled {
+    max-width: 30px;
+    position: absolute;
+    top: 2.7vh;
+    left: 83%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
   }
 
   .swiper-slide {
@@ -74,5 +94,6 @@
   .products h1 {
     position: relative;
     left: 15px;
+    width: 100px;
   }
 }
