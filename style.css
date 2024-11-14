@@ -1,4 +1,4 @@
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 530px) {
   * {
     padding: 0;
     margin: 0;
@@ -48,34 +48,36 @@
     top: 2.7vh;
     left: 83%;
     opacity: 0;
-    visibility: hidden;
     transition: opacity 0.5s ease-in-out;
   }
 
   .swiper-slide {
     border: 1px solid;
-    margin-top: 20px;
-    margin-left: 15px;
-    padding-bottom: 10px;
   }
 
   .swiper-slide h1 {
-    position: relative;
-    left: 25%;
     font-size: 30px;
     font-weight: 600;
     width: 100%;
+    text-align: center;
   }
 
   .swiper-slide p {
     position: relative;
     font-weight: 200;
-    left: 35%;
+    left: 37%;
+  }
+
+  #tipo {
+    position: relative;
+    text-align: center;
+    left: 0;
+    font-weight: 300;
   }
 
   .swiper-slide button {
     position: relative;
-    left: 32%;
+    left: 34%;
     padding: 15px;
     background-color: #f1ca2f;
     border: none;
@@ -101,8 +103,8 @@
 
   .products h1 {
     position: relative;
-    left: 17%;
-    width: 300px;
+    left: 15%;
+    width: 200px;
   }
 
   .modal {
@@ -124,6 +126,7 @@
     width: 70%;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    user-select: none;
   }
 
   .close {
@@ -155,9 +158,71 @@
     width: 70%;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    user-select: none;
   }
 
   #total {
     font-weight: bold;
+  }
+
+  .remover {
+    background-color: #e74c3c;
+    color: #e4dfd3;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+
+  .remover:hover {
+    background-color: #c0392b;
+  }
+
+  .remover:active {
+    background-color: #a93226;
+  }
+
+  .info-block {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #823d1c;
+    color: #e3dbc6;
+  }
+
+  .info-block img {
+    max-width: 50px;
+    margin-bottom: 10px;
+  }
+
+  .info-block h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+
+  .info-block .short-info {
+    color: #e3dbc6;
+  }
+
+  .info-block .detailed-info {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #823d1c;
+  }
+
+  .info-block.active .detailed-info {
+    display: block;
+  }
+
+  .info-block.active {
+    background-color: #f9f9f9;
+    border-color: #f1ca2f;
   }
 }

@@ -1,109 +1,119 @@
-// Seleciona os elementos
-const bagIcon = document.getElementById("bag-filled");
-const modal = document.getElementById("carrinho-modal");
-const modalContent = document.getElementById("modal-content");
-const closeModal = document.querySelector(".close");
-const cartItems = document.getElementById("item-carrinho");
-const cartCounter = document.querySelector(".icons span");
-const addToCartButtons = document.querySelectorAll(".comprar");
+document.addEventListener("DOMContentLoaded", () => {
+  const carrinho = [];
+  const bagIcon = document.getElementById("bag");
+  const bagFilledIcon = document.getElementById("bag-filled");
+  const carrinhoModal = document.getElementById("carrinho-modal");
+  const closeModal = document.querySelector(".close");
+  const itemCarrinho = document.getElementById("item-carrinho");
+  const totalContainer = document.getElementById("total");
+  const produtos = document.querySelectorAll(".swiper-slide");
+  const spanCarrinho = document.querySelector(".icons span");
 
-// Objeto para armazenar itens e suas quantidades
-let cart = {};
+  let contadorItens = 0;
 
-// Função para atualizar o contador total no ícone da sacola
-function updateCartCounter() {
-  const totalItems = Object.values(cart).reduce(
-    (acc, item) => acc + item.quantity,
-    0
-  );
-  cartCounter.textContent = totalItems;
-
-  if (totalItems > 0) {
-    bagIcon.style.opacity = "1";
-    bagIcon.style.visibility = "visible";
-  } else {
-    bagIcon.style.opacity = "0";
-    bagIcon.style.visibility = "hidden";
-  }
-}
-
-// Função para adicionar itens ao carrinho
-addToCartButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const productName =
-      button.previousElementSibling.previousElementSibling.textContent.trim();
-    const productPrice = parseFloat(
-      button.previousElementSibling.textContent
-        .replace("R$", "")
-        .replace(",", ".")
-    );
-
-    if (cart[productName]) {
-      // Se o produto já estiver no carrinho, aumenta a quantidade
-      cart[productName].quantity++;
+  // Função para alternar entre os ícones de bolsa vazia e cheia
+  function atualizarIconeBolsa() {
+    if (contadorItens === 0) {
+      bagIcon.style.opacity = "1";
+      bagFilledIcon.style.opacity = "0"; // Mostra o ícone de bolsa cheia
     } else {
-      // Caso contrário, adiciona um novo item ao carrinho
-      cart[productName] = {
-        price: productPrice,
-        quantity: 1,
-      };
+      bagIcon.style.opacity = "0";
+      bagFilledIcon.style.opacity = "1"; // Mostra o ícone de bolsa vazia
+    }
+  }
+
+  // Abrir o modal do carrinho ao clicar em qualquer ícone da bolsa
+  function abrirModalCarrinho() {
+    carrinhoModal.style.display = "block";
+    atualizarCarrinho();
+  }
+
+  // Adicionando evento de clique para ambos os ícones de bolsa
+  bagIcon.addEventListener("click", abrirModalCarrinho);
+  bagFilledIcon.addEventListener("click", abrirModalCarrinho);
+
+  // Fechar o modal do carrinho
+  closeModal.addEventListener("click", () => {
+    carrinhoModal.style.display = "none";
+  });
+
+  // Adicionar evento de clique para cada botão de comprar
+  produtos.forEach((produto) => {
+    const botaoComprar = produto.querySelector(".comprar");
+    botaoComprar.addEventListener("click", () => {
+      const nome = produto.querySelector("h1").textContent;
+      const precoTexto = produto.querySelector("p:last-of-type").textContent;
+      const preco = parseFloat(precoTexto.replace("R$", "").replace(",", "."));
+
+      adicionarAoCarrinho(nome, preco);
+    });
+  });
+
+  function adicionarAoCarrinho(nome, preco) {
+    const itemExistente = carrinho.find((item) => item.nome === nome);
+
+    if (!itemExistente) {
+      carrinho.push({ nome, preco, quantidade: 1 });
+
+      // Incrementa o contador de itens únicos
+      contadorItens += 1;
+      spanCarrinho.textContent = contadorItens;
+    } else {
+      itemExistente.quantidade += 1;
     }
 
-    updateCartCounter(); // Atualiza o contador de itens
-  });
-});
-
-// Calcula o total do carrinho
-function calculateTotal() {
-  const total = Object.values(cart).reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
-  return `Total: R$ ${total.toFixed(2).replace(".", ",")}`;
-}
-
-// Atualiza o conteúdo do carrinho no modal
-function updateCartModal() {
-  cartItems.innerHTML = ""; // Limpa os itens atuais
-  Object.keys(cart).forEach((itemName) => {
-    const item = cart[itemName];
-    const li = document.createElement("li");
-    li.textContent = `${itemName} (x${item.quantity})`; // Apenas o nome e a quantidade
-    cartItems.appendChild(li);
-  });
-
-  // Adiciona o total no final do modal
-  const totalLi = document.createElement("li");
-  totalLi.classList.add("total"); // Classe para estilizar o total, se necessário
-  totalLi.textContent = calculateTotal();
-  cartItems.appendChild(totalLi);
-}
-
-// Abre o modal e atualiza o carrinho
-bagIcon.addEventListener("click", (event) => {
-  event.stopPropagation();
-  modal.style.display = "block";
-  updateCartModal(); // Atualiza a lista de itens e o total
-});
-
-// Fecha o modal
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-// Fecha o modal ao clicar fora dele
-document.addEventListener("click", (event) => {
-  if (modal.style.display === "block" && !modalContent.contains(event.target)) {
-    modal.style.display = "none";
+    atualizarCarrinho();
+    atualizarIconeBolsa();
   }
-});
 
-function calculateTotal() {
-  const total = Object.values(cart).reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
-  document.getElementById("total").textContent = `Total: R$ ${total
-    .toFixed(2)
-    .replace(".", ",")}`;
-}
+  function removerDoCarrinho(nome) {
+    // Encontra o item no carrinho
+    const itemIndex = carrinho.findIndex((item) => item.nome === nome);
+
+    if (itemIndex !== -1) {
+      const item = carrinho[itemIndex];
+
+      // Reduz a quantidade ou remove completamente o item do carrinho
+      if (item.quantidade > 1) {
+        item.quantidade -= 1;
+      } else {
+        carrinho.splice(itemIndex, 1); // Remove o item do carrinho
+        contadorItens -= 1; // Atualiza o contador de itens únicos
+        spanCarrinho.textContent = contadorItens;
+      }
+    }
+
+    atualizarCarrinho();
+    atualizarIconeBolsa();
+  }
+
+  function atualizarCarrinho() {
+    itemCarrinho.innerHTML = "";
+
+    carrinho.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = `${item.nome} (x${item.quantidade})`;
+
+      // Criar botão de remover
+      const botaoRemover = document.createElement("button");
+      botaoRemover.textContent = "Remover";
+      botaoRemover.classList.add("remover");
+      botaoRemover.addEventListener("click", () => {
+        removerDoCarrinho(item.nome);
+      });
+
+      li.appendChild(botaoRemover); // Adiciona o botão ao item
+      itemCarrinho.appendChild(li); // Adiciona o item à lista do carrinho
+    });
+
+    const total = carrinho.reduce(
+      (acc, item) => acc + item.preco * item.quantidade,
+      0
+    );
+    totalContainer.textContent = `Total: R$${total
+      .toFixed(2)
+      .replace(".", ",")}`;
+  }
+
+  atualizarIconeBolsa();
+});
