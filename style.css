@@ -107,6 +107,54 @@
     width: 200px;
   }
 
+  .filter-toggle {
+    background-color: transparent;
+    position: absolute;
+    top: 14.5%;
+    left: 84%;
+  }
+
+  .filter-toggle button {
+    background-color: transparent;
+    border: none;
+  }
+
+  .filter img {
+    max-width: 25px;
+  }
+
+  .filter-section {
+    padding: 15px;
+    background-color: #e3dbc6;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+
+  #filter-section {
+    display: none; /* Esconde por padrão */
+    /* Outros estilos de filtro */
+  }
+
+  #filter-section.open {
+    display: block; /* Mostra quando a classe 'open' é adicionada */
+  }
+
+  .filter-group {
+    margin-bottom: 15px;
+  }
+
+  .filter-group label {
+    font-weight: bold;
+  }
+
+  .filter-group select,
+  .filter-group input {
+    padding: 5px;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 4px;
+  }
+
   .modal {
     position: fixed;
     z-index: 10000;

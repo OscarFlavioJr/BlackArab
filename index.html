@@ -35,125 +35,190 @@
           </div>
           <div class="icons">
             <img src="assets/images/icons/search-bar blackarab.svg" alt="" />
-            <img src="assets/images/icons/bag blackarab.svg" alt="" / id="bag">
-            <img src="assets/images/icons/bag-filled.svg" alt="" /
-            id="bag-filled">
+            <img src="assets/images/icons/bag blackarab.svg" alt="" id="bag" />
+            <img
+              src="assets/images/icons/bag-filled.svg"
+              alt=""
+              id="bag-filled"
+            />
             <span>0</span>
           </div>
         </div>
       </div>
     </header>
 
-    <body>
-      <div class="section">
-        <div class="products">
-          <h1>CAFÉS:</h1>
+    <div class="section">
+      <!-- Ícone de filtro com SVG -->
+      <div class="filter-toggle">
+        <!-- SVG para o ícone de filtro -->
+        <button>
+          <svg
+            width="32"
+            height="32"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            class="icon-filter"
+            id="filter-icon"
+          >
+            <path
+              d="M6 10a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 10zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 7zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 4z"
+            />
+          </svg>
+        </button>
+      </div>
 
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="assets/images/photos/products/black500.png" alt="" />
-                <h1>BLACK 500g <br />MOÍDO</h1>
-                <p id="tipo">Café Frutado</p>
-                <p id="tipo">Torra média</p>
-                <p>R$ 80,00</p>
-                <button class="comprar">COMPRAR</button>
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/photos/products/black250t.png" alt="" />
-                <h1>BLACK 250g <br />MOÍDO</h1>
-                <p id="tipo">Café frutado</p>
-                <p id="tipo">Torra média</p>
+      <!-- Seção de filtros que será aberta pelo SVG -->
+      <div id="filter-section" class="filter-section hidden">
+        <div class="filter-group">
+          <label for="nome">Nome do Café:</label>
+          <select id="nome">
+            <option value="todos">Todos</option>
+            <option value="Black">Black</option>
+            <option value="Arab">Arab</option>
+            <option value="Florada">Florada</option>
+          </select>
+        </div>
 
-                <p>R$ 60,00</p>
-                <button class="comprar">COMPRAR</button>
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/photos/products/arab500.png" alt="" />
-                <h1>ARAB 500g <br />MOÍDO</h1>
-                <p id="tipo">Café <a href=""></a>chocolatado</p>
-                <p id="tipo">Torra média</p>
+        <div class="filter-group">
+          <label for="peso">Peso:</label>
+          <select id="peso">
+            <option value="todos">Todos</option>
+            <option value="250g">250g</option>
+            <option value="500g">500g</option>
+            <option value="1kg">1kg</option>
+          </select>
+        </div>
 
-                <p>R$ 100,00</p>
-                <button class="comprar">COMPRAR</button>
-              </div>
+        <div class="filter-group">
+          <label for="torra">Nível de Torra:</label>
+          <select id="torra">
+            <option value="todos">Todas</option>
+            <option value="clara">Clara</option>
+            <option value="media">Média</option>
+            <option value="escura">Escura</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="products">
+        <h1>CAFÉS:</h1>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-category="Black 500g ">
+              <img src="assets/images/photos/products/black500.png" alt="" />
+              <h1>BLACK 500g</h1>
+              <p id="tipo">Café Frutado</p>
+              <p id="tipo">Moído</p>
+              <p id="tipo">Torra média</p>
+              <p>R$ 80,00</p>
+              <button class="comprar">COMPRAR</button>
+            </div>
+            <div class="swiper-slide" data-category="Black 250g">
+              <img src="assets/images/photos/products/black250t.png" alt="" />
+              <h1>BLACK 250g</h1>
+              <p id="tipo">Café frutado</p>
+              <p id="tipo">Moído</p>
+              <p id="tipo">Torra média</p>
+              <p>R$ 60,00</p>
+              <button class="comprar">COMPRAR</button>
+            </div>
+            <div class="swiper-slide" data-category="Arab 500g">
+              <img src="assets/images/photos/products/arab500.png" alt="" />
+              <h1>ARAB 500g</h1>
+              <p id="tipo">Café achocolatado</p>
+              <p id="tipo">Moído</p>
+              <p id="tipo">Torra média</p>
+              <p>R$ 100,00</p>
+              <button class="comprar">COMPRAR</button>
+            </div>
+            <div class="swiper-slide" data-category="Florada">
+              <img
+                src="assets/images/photos/products/Design sem nome (5).png"
+                alt=""
+              />
+              <h1>FLORADA 500g</h1>
+              <p id="tipo">Café Frutado</p>
+              <p id="tipo">Torra média</p>
+              <p>R$ 80,00</p>
+              <button class="comprar">COMPRAR</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="modal" id="carrinho-modal">
-        <div class="conteudo" id="modal-content">
-          <span class="close">&times;</span>
-          <h2>Seu Carrinho</h2>
-          <ul id="item-carrinho"></ul>
-          <div id="total-container">
-            <p id="total">Total: R$0,00</p>
-          </div>
+    <!-- Modal para o carrinho -->
+    <div class="modal" id="carrinho-modal">
+      <div class="conteudo" id="modal-content">
+        <span class="close">&times;</span>
+        <h2>Seu Carrinho</h2>
+        <ul id="item-carrinho"></ul>
+        <div id="total-container">
+          <p id="total">Total: R$0,00</p>
         </div>
       </div>
+    </div>
 
-      <div class="section">
-        <div class="info-block" id="block1">
-          <img
-            src="assets/images/icons/icone-altitude (1).svg"
-            alt="Altitude Icon"
-          />
-          <h3>Altitude: 932M</h3>
-          <p class="short-info">Altitude afeta a qualidade do café.</p>
-          <p class="detailed-info">
-            Cafés cultivados em altitudes elevadas têm um amadurecimento mais
-            lento, resultando em sabores mais complexos e maior acidez.
-          </p>
-        </div>
-
-        <div class="info-block" id="block2">
-          <img
-            src="assets/images/icons/icone-altitude (2).svg"
-            alt="Região Icon"
-          />
-          <h3>MINAS GERAIS</h3>
-          <p class="short-info">A localização define o sabor.</p>
-          <p class="detailed-info">
-            as condições climáticas do estado, com invernos amenos e verões
-            quentes e chuvosos, criam um ambiente ideal para o cultivo da
-            bebida. Além de que, as montanhas e serras presentes na região
-            proporcionam altitudes variadas. Ou seja, é essencial para o
-            desenvolvimento de diferentes tipos de café, cada um com suas
-            características e sabores únicos.
-          </p>
-        </div>
-
-        <div class="info-block" id="block3">
-          <img
-            src="assets/images/icons/icone-altitude (3).svg"
-            alt="Região Icon"
-          />
-          <h3>CAFÉ ARÁBICA</h3>
-          <p class="short-info">A espécie do sabor!</p>
-          <p class="detailed-info">
-            Todos nossos cafés são da espécie arábica, tendo subespécies como
-            ARARA, Catuaí amarelo e catuaí vermelho! Apesar da qualidade da
-            bebida não ser uma característica que dependa apenas da variedade, o
-            café Arara tem se destacado por pontuações altas em concursos. Às
-            vezes, essa pontuação fica acima de 90 pontos, com características
-            de uma bebida limpa e adocicada.
-            (https://blog.aegro.com.br/cafe-arara/) No gosto, tanto o fruto
-            amarelo quanto o vermelho têm características em comum: tendem a ser
-            leves e suaves de leve acidez. O sabor é levemente adocicado e pouco
-            encorpado. Mas há diferenças, ainda que sutis. O café catuaí amarelo
-            é um tanto menos encorpado que seu irmão de frutos vermelhos. De
-            acordo com especificidades de linhagem, os cafés catuaí amarelo
-            podem apresentar como diferenciais notas de caramelo e banana, por
-            exemplo. Em suma, o café catuaí amarelo é mais delicado, suave.
-            (https://reidocafe.com.br/cafe-catuai-amarelo-2/)
-          </p>
-        </div>
+    <div class="section">
+      <div class="info-block" id="block1">
+        <img
+          src="assets/images/icons/icone-altitude (1).svg"
+          alt="Altitude Icon"
+        />
+        <h3>Altitude: 932M</h3>
+        <p class="short-info">Altitude afeta a qualidade do café.</p>
+        <p class="detailed-info">
+          Cafés cultivados em altitudes elevadas têm um amadurecimento mais
+          lento, resultando em sabores mais complexos e maior acidez.
+        </p>
       </div>
-    </body>
+
+      <div class="info-block" id="block2">
+        <img
+          src="assets/images/icons/icone-altitude (2).svg"
+          alt="Região Icon"
+        />
+        <h3>MINAS GERAIS</h3>
+        <p class="short-info">A localização define o sabor.</p>
+        <p class="detailed-info">
+          As condições climáticas do estado, com invernos amenos e verões
+          quentes e chuvosos, criam um ambiente ideal para o cultivo da bebida.
+        </p>
+      </div>
+
+      <div class="info-block" id="block3">
+        <img
+          src="assets/images/icons/icone-altitude (3).svg"
+          alt="Região Icon"
+        />
+        <h3>CAFÉ ARÁBICA</h3>
+        <p class="short-info">A espécie do sabor!</p>
+        <p class="detailed-info">
+          Todos nossos cafés são da espécie arábica, tendo subespécies como
+          ARARA, Catuaí amarelo e catuaí vermelho!
+        </p>
+      </div>
+
+      <div class="info-block" id="block4">
+        <img
+          src="assets/images/icons/icone-filtrar (1).svg"
+          alt="Região Icon"
+        />
+        <h3>COLHEITA SEMI-MECANIZADA</h3>
+        <p class="short-info">Impacto direto no STRESS da planta!</p>
+        <p class="detailed-info">
+          A colheita semi-mecanizada é uma solução intermediária que traz
+          benefícios tanto em termos de eficiência quanto na manutenção da
+          qualidade dos grãos.
+        </p>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="slider.js"></script>
     <script src="app.js"></script>
     <script src="description.js"></script>
+    <script src="filtro.js"></script>
   </body>
 </html>
