@@ -1,29 +1,49 @@
-// Seleciona o ícone e a seção do filtro
-const filterIcon = document.getElementById("filter-icon");
+// Elementos DOM
 const filterSection = document.getElementById("filter-section");
-const filterButtons = document.querySelectorAll(".filter-button"); // Botões de filtro
-const productItems = document.querySelectorAll(".swiper-slide"); // Produtos
+const filterIcon = document.getElementById("filter-icon");
+const nomeFilter = document.getElementById("nome");
+const pesoFilter = document.getElementById("peso");
+const torraFilter = document.getElementById("torra");
+const products = document.querySelectorAll(".swiper-slide");
 
-// Abre e fecha o filtro ao clicar no ícone
 filterIcon.addEventListener("click", () => {
-  filterSection.classList.toggle("open"); // Alterna a classe 'open'
+  const filterSection = document.getElementById("filter-section");
+  const filterIcon = document.getElementById("filter-icon");
+
+  filterIcon.addEventListener("click", () => {
+    if (filterSection.classList.contains("hidden")) {
+      filterSection.classList.remove("hidden");
+    } else {
+      filterSection.classList.add("hidden");
+    }
+  });
 });
 
-// Adiciona o evento de clique a cada botão de filtro
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const category = button.dataset.category; // Obtém a categoria do botão
+function applyFilters() {
+  const nomeValue = nomeFilter.value.toLowerCase();
+  const pesoValue = pesoFilter.value.toLowerCase();
+  const torraValue = torraFilter.value.toLowerCase();
 
-    // Filtra os produtos com base na categoria
-    productItems.forEach((item) => {
-      if (category === "all" || item.dataset.category.includes(category)) {
-        item.style.display = "block"; // Mostra o item se ele corresponder à categoria
-      } else {
-        item.style.display = "none"; // Esconde o item se ele não corresponder
-      }
-    });
+  products.forEach((product) => {
+    const productNome = product.getAttribute("data-category").toLowerCase();
+    const productPeso = product.getAttribute("data-peso").toLowerCase();
+    const productTorra = product.getAttribute("data-torra").toLowerCase();
 
-    // Fecha o filtro automaticamente após a seleção
-    filterSection.classList.remove("open");
+    const matchesNome =
+      nomeValue === "todos" || productNome.includes(nomeValue);
+    const matchesPeso =
+      pesoValue === "todos" || productPeso.includes(pesoValue);
+    const matchesTorra =
+      torraValue === "todos" || productTorra.includes(torraValue);
+
+    if (matchesNome && matchesPeso && matchesTorra) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
   });
+}
+
+[nomeFilter, pesoFilter, torraFilter].forEach((filter) => {
+  filter.addEventListener("change", applyFilters);
 });

@@ -11,33 +11,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let contadorItens = 0;
 
-  // Função para alternar entre os ícones de bolsa vazia e cheia
   function atualizarIconeBolsa() {
     if (contadorItens === 0) {
       bagIcon.style.opacity = "1";
-      bagFilledIcon.style.opacity = "0"; // Mostra o ícone de bolsa cheia
+      bagFilledIcon.style.opacity = "0";
     } else {
       bagIcon.style.opacity = "0";
-      bagFilledIcon.style.opacity = "1"; // Mostra o ícone de bolsa vazia
+      bagFilledIcon.style.opacity = "1";
     }
   }
 
-  // Abrir o modal do carrinho ao clicar em qualquer ícone da bolsa
   function abrirModalCarrinho() {
     carrinhoModal.style.display = "block";
     atualizarCarrinho();
   }
 
-  // Adicionando evento de clique para ambos os ícones de bolsa
   bagIcon.addEventListener("click", abrirModalCarrinho);
   bagFilledIcon.addEventListener("click", abrirModalCarrinho);
 
-  // Fechar o modal do carrinho
   closeModal.addEventListener("click", () => {
     carrinhoModal.style.display = "none";
   });
 
-  // Adicionar evento de clique para cada botão de comprar
   produtos.forEach((produto) => {
     const botaoComprar = produto.querySelector(".comprar");
     botaoComprar.addEventListener("click", () => {
@@ -55,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!itemExistente) {
       carrinho.push({ nome, preco, quantidade: 1 });
 
-      // Incrementa o contador de itens únicos
       contadorItens += 1;
       spanCarrinho.textContent = contadorItens;
     } else {
@@ -67,18 +61,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function removerDoCarrinho(nome) {
-    // Encontra o item no carrinho
     const itemIndex = carrinho.findIndex((item) => item.nome === nome);
 
     if (itemIndex !== -1) {
       const item = carrinho[itemIndex];
 
-      // Reduz a quantidade ou remove completamente o item do carrinho
       if (item.quantidade > 1) {
         item.quantidade -= 1;
       } else {
-        carrinho.splice(itemIndex, 1); // Remove o item do carrinho
-        contadorItens -= 1; // Atualiza o contador de itens únicos
+        carrinho.splice(itemIndex, 1);
+        contadorItens -= 1;
         spanCarrinho.textContent = contadorItens;
       }
     }
@@ -94,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const li = document.createElement("li");
       li.textContent = `${item.nome} (x${item.quantidade})`;
 
-      // Criar botão de remover
       const botaoRemover = document.createElement("button");
       botaoRemover.textContent = "Remover";
       botaoRemover.classList.add("remover");
@@ -102,8 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
         removerDoCarrinho(item.nome);
       });
 
-      li.appendChild(botaoRemover); // Adiciona o botão ao item
-      itemCarrinho.appendChild(li); // Adiciona o item à lista do carrinho
+      li.appendChild(botaoRemover);
+      itemCarrinho.appendChild(li);
     });
 
     const total = carrinho.reduce(

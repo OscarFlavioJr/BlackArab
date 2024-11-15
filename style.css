@@ -130,9 +130,15 @@
     margin-bottom: 20px;
   }
 
+  .hidden {
+    display: none;
+  }
+
   #filter-section {
-    display: none; /* Esconde por padrão */
-    /* Outros estilos de filtro */
+    display: hidden;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #e3dbc6;
   }
 
   #filter-section.open {
