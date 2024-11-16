@@ -107,6 +107,13 @@
     width: 200px;
   }
 
+  #classe img {
+    display: none;
+  }
+  #tipo img {
+    display: none;
+  }
+
   .filter-toggle {
     background-color: transparent;
     position: absolute;
@@ -278,5 +285,389 @@
   .info-block.active {
     background-color: #f9f9f9;
     border-color: #f1ca2f;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .head {
+    position: fixed;
+    min-width: 100%;
+    max-height: 15vh;
+    background-color: black;
+    z-index: 10000000;
+  }
+
+  .link img {
+    max-width: 130px;
+    position: relative;
+    left: 42%;
+  }
+
+  .icons img {
+    position: absolute;
+    margin-top: 1.8%;
+    top: 5%;
+    left: 5%;
+    max-height: 35px;
+  }
+
+  .icons span {
+    position: absolute;
+    top: 58%;
+    left: 93%;
+    color: #f1ca2f;
+  }
+
+  #bag {
+    position: absolute;
+    left: 90%;
+  }
+
+  #bag-filled {
+    position: absolute;
+    left: 90%;
+  }
+
+  .swiper-slide {
+    border: 1px solid;
+    min-height: 300px;
+  }
+
+  .swiper-slide img {
+    position: absolute;
+    max-height: 250px;
+    top: 15%;
+  }
+
+  .swiper-slide p {
+    position: relative;
+    font-weight: 200;
+    left: 37%;
+  }
+
+  #tipo {
+    position: relative;
+    text-align: center;
+    left: 0;
+    font-weight: 300;
+  }
+
+  .swiper-slide button {
+    position: relative;
+    left: 34%;
+    padding: 15px;
+    background-color: #f1ca2f;
+    border: none;
+    font-family: "Kanit", serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .swiper-slide button:hover {
+    background-color: black;
+    color: #f1ca2f;
+    transition: all 0.3s ease-in-out 0.3s;
+  }
+
+  .swiper-slide img {
+    max-width: 280px;
+  }
+
+  .products {
+    background-color: #e4dfd3;
+    padding-bottom: 30px;
+  }
+
+  #classe {
+    position: absolute;
+    top: 15%;
+    left: 65%;
+    font-size: 20px;
+  }
+
+  #classe img {
+    position: absolute;
+    top: -12px;
+    left: 110%;
+    max-width: 40px;
+  }
+
+  #tipo {
+    position: absolute;
+    top: 25%;
+    left: 65%;
+    font-size: 20px;
+  }
+
+  #tipo img {
+    position: absolute;
+    top: -18px;
+    left: 110%;
+    max-width: 40px;
+  }
+
+  #torra {
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    font-size: 20px;
+    background-color: #ccc;
+  }
+  #classeBlack250 {
+    position: absolute;
+    top: 15%;
+    left: 65%;
+    font-size: 20px;
+  }
+
+  #classeBlack250 img {
+    position: absolute;
+    top: -12px;
+    left: 110%;
+    max-width: 40px;
+  }
+
+  #tipoBlack250 {
+    position: absolute;
+    top: 25%;
+    left: 65%;
+    font-size: 20px;
+  }
+
+  #tipoBlack250 img {
+    position: absolute;
+    top: -18px;
+    left: 110%;
+    max-width: 40px;
+  }
+
+  #torraBlack250 {
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    font-size: 20px;
+    background-color: #ccc;
+  }
+
+  #classeArab500 {
+    position: absolute;
+    top: 15%;
+    left: 65%;
+    font-size: 20px;
+  }
+
+  #classeArab500 img {
+    position: absolute;
+    top: -12px;
+    left: 110%;
+    max-width: 40px;
+  }
+
+  #tipoArab500 {
+    position: absolute;
+    top: 25%;
+    left: 65%;
+    font-size: 20px;
+  }
+
+  #tipoArab500 img {
+    position: absolute;
+    top: -18px;
+    left: 110%;
+    max-width: 40px;
+  }
+
+  #torraArab500 {
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    font-size: 20px;
+    background-color: #ccc;
+  }
+
+  #classeFlorada500 {
+    position: absolute;
+    top: 15%;
+    left: 65%;
+    font-size: 20px;
+  }
+
+  #classeFlorada500 img {
+    position: absolute;
+    top: -12px;
+    left: 110%;
+    max-width: 40px;
+  }
+
+  #tipoFlorada500 {
+    position: absolute;
+    top: 25%;
+    left: 65%;
+    font-size: 20px;
+  }
+
+  #tipoFlorada500 img {
+    position: absolute;
+    top: -18px;
+    left: 110%;
+    max-width: 40px;
+  }
+
+  #torraFlorada500 {
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    font-size: 20px;
+    background-color: #ccc;
+  }
+
+  #preco {
+    position: absolute;
+    top: 54%;
+    left: 70%;
+    font-size: 15px;
+  }
+
+  .comprar {
+    position: absolute;
+    top: 150px;
+    margin-left: 255px;
+    min-width: 150px;
+    min-height: 80px;
+  }
+
+  #cafe {
+    opacity: 0;
+  }
+
+  .modal {
+    position: fixed;
+    z-index: 10000;
+    right: 0;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .conteudo {
+    background-color: #e4dfd3;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    user-select: none;
+  }
+
+  .close {
+    color: #823d1c;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #item-carrinho li {
+    list-style-type: none;
+    background-image: url(assets/images/icons/logo\ blackarab.svg);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+    padding-left: 30px;
+  }
+
+  #total-container {
+    font-weight: bold;
+    position: absolute;
+    top: 83%;
+    left: 10%;
+    background-color: #136e38;
+    color: #e4dfd3;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    user-select: none;
+  }
+
+  #total {
+    font-weight: bold;
+  }
+  #total {
+    font-weight: bold;
+  }
+
+  .remover {
+    background-color: #e74c3c;
+    color: #e4dfd3;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+
+  .remover:hover {
+    background-color: #c0392b;
+  }
+
+  .remover:active {
+    background-color: #a93226;
+  }
+
+  .info-block {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #823d1c;
+    color: #e3dbc6;
+  }
+
+  .info-block img {
+    max-width: 50px;
+    margin-bottom: 10px;
+  }
+
+  .info-block h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+
+  .info-block .short-info {
+    color: #e3dbc6;
+  }
+
+  .info-block .detailed-info {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #823d1c;
+  }
+
+  .info-block.active .detailed-info {
+    display: block;
+  }
+
+  .info-block.active {
+    background-color: #f9f9f9;
+    border-color: #f1ca2f;
+  }
+
+  .filter-group {
+    display: hidden;
   }
 }
