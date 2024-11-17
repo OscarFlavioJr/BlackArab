@@ -458,6 +458,15 @@
     outline: none;
   }
 
+  .filter-toggle button {
+    position: absolute;
+    left: 12%;
+    top: 34%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
   .filter-section button {
     background-color: #ff8c00;
     color: #fff;
@@ -492,6 +501,87 @@
     background-color: #e67e22;
   }
 
+  .modal {
+    position: fixed;
+    z-index: 10000;
+    right: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .conteudo {
+    background-color: #e4dfd3;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    user-select: none;
+  }
+
+  .close {
+    color: #823d1c;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #item-carrinho li {
+    list-style-type: none;
+    background-image: url(assets/images/icons/logo\ blackarab.svg);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+    padding-left: 30px;
+  }
+
+  #total-container {
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    background-color: #136e38;
+    color: #e4dfd3;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    user-select: none;
+    cursor: pointer;
+  }
+
+  #total {
+    font-weight: bold;
+    position: relative;
+    bottom: 0;
+  }
+
+  .remover {
+    background-color: #e74c3c;
+    color: #e4dfd3;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+
+  .remover:hover {
+    background-color: #c0392b;
+  }
+
+  .remover:active {
+    background-color: #a93226;
+  }
   /* RESPONSIVIDADE */
   @media (max-width: 1080px) {
     /* ESTILOS GERAIS */
@@ -535,6 +625,13 @@
     }
 
     .head .icons .bag-icon {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #bag-filled {
       position: relative;
       display: flex;
       flex-direction: column;
