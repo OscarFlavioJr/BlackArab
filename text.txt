@@ -3,3 +3,203 @@
 #823d1c Marrom Arab
 
 #e3dbc6 Branco Arab
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlackArab</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="#" class="logo">
+          <img
+            src="assets/images/photos/photos/139f6ec6-f55f-4d67-b088-ce1aa4a4d09c.png"
+            alt="Logo BlackArab"
+          />
+        </a>
+        <nav class="nav">
+          <ul>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#filtros">Filtros</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+          <div id="modal-carrinho" class="modal">
+            <div class="modal-content">
+              <span id="fechar carrinho" class="fechar">&times</span>
+              <h2>Seu carrinho</h2>
+              <ul id="carrinho-itens"></ul>
+              <div class="total">
+                <p>Total: <span id="total-valor">R$0,00</span></p>
+              </div>
+              <button class="finalizar-compra">Finalizar Compra</button>
+            </div>
+          </div>
+          <img
+            src="assets/images/icons/search-bar blackarab.svg"
+            alt="Pesquisar"
+          />
+          <img src="assets/images/icons/bag blackarab.svg" alt="Carrinho" /
+          id="bag"> <img src="assets/images/icons/bag-filled.svg" alt="" /
+          id="bag-filled">
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="produtos" class="destaque">
+      <h2>CAFÉS EM DESTAQUE</h2>
+      <div class="produtos-container">
+        <div class="produto">
+          <img
+            src="assets/images/photos/products/black500.png"
+            alt="Café Black 500g"
+          />
+          <p>Café Black 500g</p>
+          <p>NOTA: 82,65</p>
+          <p class="preco">R$ 00,00</p>
+          <button class="comprar">Comprar</button>
+          <div class="description">
+            <ul>
+              <li>Café arábica</li>
+              <li>Frutado</li>
+              <li>Moagens: Clara, média e escura</li>
+              <li>Pó e Grão</li>
+            </ul>
+          </div>
+        </div>
+        <div class="produto">
+          <img
+            src="assets/images/photos/products/black250t.png"
+            alt="Café Black 250g"
+          />
+          <p>Café Black 250g</p>
+          <p>NOTA: 82,65</p>
+          <p class="preco">R$ 00,00</p>
+          <button class="comprar">Comprar</button>
+          <div class="description">
+            <ul>
+              <li>Café arábica</li>
+              <li>Frutado</li>
+              <li>Moagens: Clara, média e escura</li>
+              <li>Pó e Grão</li>
+            </ul>
+          </div>
+        </div>
+        <div class="produto">
+          <img
+            src="assets/images/photos/products/arab500.png"
+            alt="Café Arab 500g"
+          />
+          <p>Café Arab 500g</p>
+          <p>NOTA: 87</p>
+          <p class="preco">R$ 00,00</p>
+          <button class="comprar">Comprar</button>
+          <div class="description">
+            <ul>
+              <li>Café arábica</li>
+              <li>Achocolatado</li>
+              <li>Moagens: Clara, média e escura</li>
+              <li>Pó e Grão</li>
+            </ul>
+          </div>
+        </div>
+        <div class="produto">
+          <img
+            src="assets/images/photos/products/Design sem nome (5).png"
+            alt="Café Florada 500g"
+          />
+          <p>Café Florada 500g</p>
+          <p>NOTA: 82,65</p>
+          <p class="preco">R$ 00,00</p>
+          <button class="comprar">Comprar</button>
+          <div class="description">
+            <ul>
+              <li>Blend de dois cafés arábica</li>
+              <li>Frutado</li>
+              <li>Moagens: Clara, média e escura</li>
+              <li>Pó e Grão</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="filtros">
+      <h2>Filtros</h2>
+      <div class="filtros-container">
+        <div class="filtro">
+          <h3>Moagem</h3>
+          <label>
+            <input type="checkbox" value="clara" class="filtro-moagem" />
+            Clara
+          </label>
+          <label>
+            <input type="checkbox" value="media" class="filtro-moagem" />
+            Média
+          </label>
+          <label>
+            <input type="checkbox" value="escura" class="filtro-moagem" />
+            Escura
+          </label>
+        </div>
+        <div class="filtro">
+          <h3>Preço</h3>
+          <label>
+            <input type="radio" name="preco" value="baixo" />
+            Até R$ 50,00
+          </label>
+          <label>
+            <input type="radio" name="preco" value="medio" />
+            R$ 51,00 - R$ 100,00
+          </label>
+          <label>
+            <input type="radio" name="preco" value="alto" />
+            Acima de R$ 100,00
+          </label>
+        </div>
+        <div class="filtro">
+          <h3>Característica</h3>
+          <label>
+            <input type="radio" name="caracteristica" value="frutado" />
+            Frutado
+          </label>
+          <label>
+            <input type="radio" name="caracteristica" value="achocolatado" />
+            Achocolatado
+          </label>
+        </div>
+        <button id="aplicar-filtros">Aplicar Filtros</button>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre</h2>
+      <!-- Conteúdo sobre a marca -->
+    </section>
+
+    <footer>
+      <p>&copy; 2024 BlackArab. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="filtro.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

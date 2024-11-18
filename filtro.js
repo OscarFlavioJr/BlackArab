@@ -1,22 +1,52 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const filterIcon = document.getElementById("filter-icon");
-  const filterSection = document.getElementById("filter-section");
+document.getElementById("aplicar-filtros").addEventListener("click", () => {
+  // Captura os filtros selecionados
+  const tiposSelecionados = Array.from(
+    document.querySelectorAll(".filtro-tipo:checked")
+  ).map((el) => el.value);
+  const moagensSelecionadas = Array.from(
+    document.querySelectorAll(".filtro-moagem:checked")
+  ).map((el) => el.value);
+  const precoSelecionado = document.querySelector(
+    'input[name="preco"]:checked'
+  )?.value;
 
-  if (!filterIcon || !filterSection) {
-    console.error("Elementos não encontrados no DOM.");
-    return;
-  }
+  // Obtém os produtos
+  const produtos = document.querySelectorAll(".produto");
 
-  filterIcon.addEventListener("click", () => {
-    filterSection.classList.toggle("hidden");
-  });
+  produtos.forEach((produto) => {
+    // Filtra por tipo
+    const tipo = produto
+      .querySelector(".description li:first-child")
+      .textContent.toLowerCase(); // Exemplo: "café arábica"
+    const mostraTipo =
+      tiposSelecionados.length === 0 ||
+      tiposSelecionados.some((tipoSel) => tipo.includes(tipoSel));
 
-  document.addEventListener("click", (event) => {
-    if (
-      !filterSection.contains(event.target) &&
-      !filterIcon.contains(event.target)
-    ) {
-      filterSection.classList.add("hidden");
+    // Filtra por moagem
+    const moagem = produto
+      .querySelector(".description li:nth-child(3)")
+      .textContent.toLowerCase(); // Exemplo: "clara"
+    const mostraMoagem =
+      moagensSelecionadas.length === 0 ||
+      moagensSelecionadas.some((moagemSel) => moagem.includes(moagemSel));
+
+    // Filtra por preço
+    const preco = parseFloat(
+      produto
+        .querySelector(".preco")
+        .textContent.replace("R$", "")
+        .replace(",", ".")
+    );
+    let mostraPreco = true;
+    if (precoSelecionado === "baixo") mostraPreco = preco <= 50;
+    if (precoSelecionado === "medio") mostraPreco = preco > 50 && preco <= 100;
+    if (precoSelecionado === "alto") mostraPreco = preco > 100;
+
+    // Mostra ou esconde o produto
+    if (mostraTipo && mostraMoagem && mostraPreco) {
+      produto.style.display = "block";
+    } else {
+      produto.style.display = "none";
     }
   });
 });

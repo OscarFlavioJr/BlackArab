@@ -10,235 +10,196 @@
       href="assets/images/icons/favicon.ico"
       type="image/x-icon"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <header>
-      <div class="section">
-        <div class="head">
-          <div class="link">
-            <a href="">
-              <img
-                src="assets/images/photos/photos/139f6ec6-f55f-4d67-b088-ce1aa4a4d09c.png"
-                alt=""
-              />
-            </a>
+      <div class="header-container">
+        <a href="#" class="logo">
+          <img
+            src="assets/images/photos/photos/139f6ec6-f55f-4d67-b088-ce1aa4a4d09c.png"
+            alt="Logo BlackArab"
+          />
+        </a>
+        <nav class="nav">
+          <ul>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#filtros">Filtros</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+          <div id="modal-carrinho" class="modal">
+            <div class="modal-content">
+              <span id="fechar-carrinho" class="fechar">&times;</span>
+              <h2>Seu carrinho</h2>
+              <ul id="carrinho-itens"></ul>
+              <div class="total">
+                <p>Total: <span id="total-valor">R$ 0,00</span></p>
+              </div>
+              <button class="finalizar-compra">Finalizar Compra</button>
+            </div>
           </div>
-          <div class="icons">
-            <img src="assets/images/icons/search-bar blackarab.svg" alt="" />
-            <img src="assets/images/icons/bag blackarab.svg" alt="" id="bag" />
-            <img
-              src="assets/images/icons/bag-filled.svg"
-              alt=""
-              id="bag-filled"
-            />
-            <span>0</span>
-          </div>
+          <img
+            src="assets/images/icons/search-bar blackarab.svg"
+            alt="Pesquisar"
+          />
+          <img src="assets/images/icons/bag blackarab.svg" id="bag" alt="Carrinho" />
+          <img
+            src="assets/images/icons/bag-filled.svg"
+            id="bag-filled"
+            alt="Carrinho cheio"
+            style="display: none;"
+          />
+          <span class="cart-count">0</span>
         </div>
+      </div>
+      </div>
       </div>
     </header>
 
-    <div class="section">
-      <!-- Ícone de filtro com SVG -->
-      <div class="filter-toggle">
-        <!-- SVG para o ícone de filtro -->
-        <button>
-          <svg
-            width="32"
-            height="32"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 16 16"
-            class="icon-filter"
-            id="filter-icon"
-          >
-            <path
-              d="M6 10a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 10zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 7zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 4z"
-            />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Seção de filtros que será aberta pelo SVG -->
-      <div id="filter-section" class="filter-section hidden">
-        <div class="filter-group">
-          <label for="nome">Nome do Café:</label>
-          <select id="nome">
-            <option value="todos">Todos</option>
-            <option value="Black">Black</option>
-            <option value="Arab">Arab</option>
-            <option value="Florada">Florada</option>
-          </select>
+    <section id="produtos" class="destaque">
+      <h2>CAFÉS EM DESTAQUE</h2>
+      <div class="produtos-container">
+        <div class="produto">
+          <img
+            src="assets/images/photos/products/black500.png"
+            alt="Café Black 500g"
+          />
+          <p>Café Black 500g</p>
+          <p>NOTA: 82,65</p>
+          <p class="preco">R$ 00,00</p>
+          <button class="comprar">Comprar</button>
+          <div class="description">
+            <ul>
+              <li>Café arábica</li>
+              <li>Frutado</li>
+              <li>Moagens: Clara, média e escura</li>
+              <li>Pó e Grão</li>
+            </ul>
+          </div>
         </div>
-
-        <div class="filter-group">
-          <label for="peso">Peso:</label>
-          <select id="peso">
-            <option value="todos">Todos</option>
-            <option value="250g">250g</option>
-            <option value="500g">500g</option>
-            <option value="1kg">1kg</option>
-          </select>
+        <div class="produto">
+          <img
+            src="assets/images/photos/products/black250t.png"
+            alt="Café Black 250g"
+          />
+          <p>Café Black 250g</p>
+          <p>NOTA: 82,65</p>
+          <p class="preco">R$ 00,00</p>
+          <button class="comprar">Comprar</button>
+          <div class="description">
+            <ul>
+              <li>Café arábica</li>
+              <li>Frutado</li>
+              <li>Moagens: Clara, média e escura</li>
+              <li>Pó e Grão</li>
+            </ul>
+          </div>
         </div>
-
-        <div class="filter-group">
-          <label for="torra">Nível de Torra:</label>
-          <select id="torra">
-            <option value="todos">Todas</option>
-            <option value="clara">Clara</option>
-            <option value="media">Média</option>
-            <option value="escura">Escura</option>
-          </select>
+        <div class="produto">
+          <img
+            src="assets/images/photos/products/arab500.png"
+            alt="Café Arab 500g"
+          />
+          <p>Café Arab 500g</p>
+          <p>NOTA: 87</p>
+          <p class="preco">R$ 00,00</p>
+          <button class="comprar">Comprar</button>
+          <div class="description">
+            <ul>
+              <li>Café arábica</li>
+              <li>Achocolatado</li>
+              <li>Moagens: Clara, média e escura</li>
+              <li>Pó e Grão</li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="products">
-        <h1 id="cafe">CAFÉS:</h1>
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide"
-              data-category="Black"
-              data-peso="500g"
-              data-torra="media"
-            >
-              <img src="assets/images/photos/products/black500.png" alt="" />
-              <h1>BLACK 500g</h1>
-              <p id="classe">CAFÉ FRUTADO</p>
-              <p id="tipo">MOÍDO</p>
-              <p id="torra">TORRA MÉDIA</p>
-              <p id="preco">R$ 80,00</p>
-              <button class="comprar">COMPRAR</button>
-            </div>
-            <div
-              class="swiper-slide"
-              data-category="Black"
-              data-peso="250g"
-              data-torra="média"
-            >
-              <img src="assets/images/photos/products/black250t.png" alt="" />
-              <h1>BLACK 250g</h1>
-              <p id="classeBlack250">CAFÉ FRUTADO</p>
-              <p id="tipoBlack250">MOÍDO</p>
-              <p id="torraBlack250">TORRA MÉDIA</p>
-              <p id="preco">R$ 60,00</p>
-              <button class="comprar">COMPRAR</button>
-            </div>
-            <div
-              class="swiper-slide"
-              data-category="Arab"
-              data-peso="500g"
-              data-torra="média"
-            >
-              <img src="assets/images/photos/products/arab500.png" alt="" />
-              <h1>ARAB 500g</h1>
-              <p id="classeArab500">CAFÉ ACHOCOLATADO</p>
-              <p id="tipoArab500">MOÍDO</p>
-              <p id="torraArab500">TORRA MÉDIA</p>
-              <p id="preco">R$ 100,00</p>
-              <button class="comprar">COMPRAR</button>
-            </div>
-            <div
-              class="swiper-slide"
-              data-category="Florada"
-              data-peso="500g"
-              data-torra="média"
-            >
-              <img
-                src="assets/images/photos/products/Design sem nome (5).png"
-                alt=""
-              />
-              <h1>FLORADA 500g</h1>
-              <p id="classeFlorada500">CAFÉ FRUTADO</p>
-              <p id="torraFlorada500">TORRA MÉDIA</p>
-              <p id="preco">R$ 80,00</p>
-              <button class="comprar">COMPRAR</button>
-            </div>
+        <div class="produto">
+          <img
+            src="assets/images/photos/products/Design sem nome (5).png"
+            alt="Café Florada 500g"
+          />
+          <p>Café Florada 500g</p>
+          <p>NOTA: 82,65</p>
+          <p class="preco">R$ 00,00</p>
+          <button class="comprar">Comprar</button>
+          <div class="description">
+            <ul>
+              <li>Blend de dois cafés arábica</li>
+              <li>Frutado</li>
+              <li>Moagens: Clara, média e escura</li>
+              <li>Pó e Grão</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Modal para o carrinho -->
-    <div class="modal" id="carrinho-modal">
-      <div class="conteudo" id="modal-content">
-        <span class="close">&times;</span>
-        <h2>Seu Carrinho</h2>
-        <ul id="item-carrinho"></ul>
-        <div id="total-container">
-          <p id="total">Total: R$0,00</p>
+    <section id="filtros">
+      <h2>Filtros</h2>
+      <div class="filtros-container">
+        <div class="filtro">
+          <h3>Moagem</h3>
+          <label>
+            <input type="checkbox" value="clara" class="filtro-moagem" />
+            Clara
+          </label>
+          <label>
+            <input type="checkbox" value="media" class="filtro-moagem" />
+            Média
+          </label>
+          <label>
+            <input type="checkbox" value="escura" class="filtro-moagem" />
+            Escura
+          </label>
         </div>
+        <div class="filtro">
+          <h3>Preço</h3>
+          <label>
+            <input type="radio" name="preco" value="baixo" />
+            Até R$ 50,00
+          </label>
+          <label>
+            <input type="radio" name="preco" value="medio" />
+            R$ 51,00 - R$ 100,00
+          </label>
+          <label>
+            <input type="radio" name="preco" value="alto" />
+            Acima de R$ 100,00
+          </label>
+        </div>
+        <div class="filtro">
+          <h3>Característica</h3>
+          <label>
+            <input type="radio" name="caracteristica" value="frutado" />
+            Frutado
+          </label>
+          <label>
+            <input type="radio" name="caracteristica" value="achocolatado" />
+            Achocolatado
+          </label>
+        </div>
+        <button id="aplicar-filtros">Aplicar Filtros</button>
+        <button id="remover-filtros">Remover Filtros</button>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <div class="info-block" id="block1">
-        <img
-          src="assets/images/icons/icone-altitude (1).svg"
-          alt="Altitude Icon"
-        />
-        <h3>Altitude: 932M</h3>
-        <p class="short-info">Altitude afeta a qualidade do café.</p>
-        <p class="detailed-info">
-          Cafés cultivados em altitudes elevadas têm um amadurecimento mais
-          lento, resultando em sabores mais complexos e maior acidez.
-        </p>
-      </div>
+    <section id="sobre">
+      <h2>Sobre</h2>
+      <!-- Conteúdo sobre a marca -->
+    </section>
 
-      <div class="info-block" id="block2">
-        <img
-          src="assets/images/icons/icone-altitude (2).svg"
-          alt="Região Icon"
-        />
-        <h3>MINAS GERAIS</h3>
-        <p class="short-info">A localização define o sabor.</p>
-        <p class="detailed-info">
-          As condições climáticas do estado, com invernos amenos e verões
-          quentes e chuvosos, criam um ambiente ideal para o cultivo da bebida.
-        </p>
-      </div>
+    <footer>
+      <p>&copy; 2024 BlackArab. Todos os direitos reservados.</p>
+    </footer>
 
-      <div class="info-block" id="block3">
-        <img
-          src="assets/images/icons/icone-altitude (3).svg"
-          alt="Região Icon"
-        />
-        <h3>CAFÉ ARÁBICA</h3>
-        <p class="short-info">A espécie do sabor!</p>
-        <p class="detailed-info">
-          Todos nossos cafés são da espécie arábica, tendo subespécies como
-          ARARA, Catuaí amarelo e catuaí vermelho!
-        </p>
-      </div>
-
-      <div class="info-block" id="block4">
-        <img
-          src="assets/images/icons/icone-filtrar (1).svg"
-          alt="Região Icon"
-        />
-        <h3>COLHEITA SEMI-MECANIZADA</h3>
-        <p class="short-info">Impacto direto no STRESS da planta!</p>
-        <p class="detailed-info">
-          A colheita semi-mecanizada é uma solução intermediária que traz
-          benefícios tanto em termos de eficiência quanto na manutenção da
-          qualidade dos grãos.
-        </p>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="slider.js"></script>
-    <script src="app.js"></script>
-    <script src="description.js"></script>
     <script src="filtro.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
