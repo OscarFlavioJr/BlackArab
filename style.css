@@ -24,10 +24,20 @@ header {
   z-index: 10;
 }
 
+.destaque h2 {
+  font-family: "Montserrat", serif;
+}
+
 .produto .description {
   opacity: 0;
   visibility: hidden;
   transition: 0.15s ease-in-out 0.15s;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.nota {
+  font-family: "Roboto", sans-serif;
 }
 
 .description ul {
@@ -199,6 +209,8 @@ h2 {
 .produto {
   background: #f9f9f9;
   border: 1.01px solid #ddd;
+  font-family: "Montserrat", serif;
+  font-size: 30px;
   border-radius: 8px;
   overflow: hidden;
   width: 250px;
