@@ -1,22 +1,50 @@
-// Seleção dos elementos
-const modalCarrinho = document.getElementById("modal-carrinho");
-const bagIcon = document.getElementById("bag");
-const bagFilledIcon = document.getElementById("bag-filled");
-const fecharCarrinho = document.getElementById("fechar-carrinho");
+const sacola = document.querySelector("#bag-filled");
+const sacolaVazia = document.querySelector("#bag");
+const comprar = document.querySelectorAll(".comprar");
+const contador = document.querySelector(".cart-count");
+const modal = document.querySelector(".modal");
+const moodal = document.querySelector("#modal-content");
+const fecha = document.querySelector("#fechar-carrinho");
+const produtos = document.querySelectorAll("#produtos");
+const lista = document.querySelector("#carrinho-itens");
+const pagamento = document.querySelector("#total-valor");
 
-// Abrir o carrinho ao clicar na sacola
-bagIcon.addEventListener("click", () => {
-  modalCarrinho.style.display = "block";
+let numero = 0;
+let total = 0;
+
+comprar.forEach((button) => {
+  button.addEventListener("click", function () {
+    numero++;
+
+    contador.textContent = numero;
+
+    if (numero === 0) {
+      sacolaVazia.style.opacity = 1;
+    } else {
+      sacola.style.opacity = 1;
+      sacolaVazia.style.opacity = 0;
+    }
+
+    const produto = button.closest(".produto");
+    const nome = produto.querySelector("p").textContent;
+    const peso = nome.match(/\d+g/) || ["Sem peso"];
+    const precoText = produto.querySelector(".preco").textContent;
+    const preco = parseFloat(precoText.replace("R$", "").replace(",", "."));
+
+    total += preco;
+
+    const itemCarrinho = document.createElement("li");
+    itemCarrinho.textContent = `${nome}`;
+
+    pagamento.textContent = total;
+    lista.appendChild(itemCarrinho);
+  });
 });
 
-// Fechar o carrinho ao clicar no "x"
-fecharCarrinho.addEventListener("click", () => {
-  modalCarrinho.style.display = "none";
-});
+sacola.onclick = function () {
+  modal.style.display = "block";
+};
 
-// Fechar o carrinho ao clicar fora do modal
-window.addEventListener("click", (event) => {
-  if (event.target === modalCarrinho) {
-    modalCarrinho.style.display = "none";
-  }
-});
+fecha.onclick = function () {
+  modal.style.display = "none";
+};

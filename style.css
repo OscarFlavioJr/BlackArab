@@ -124,9 +124,9 @@ header {
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
-  color: #333;
+  color: #823d1c;
 }
 
 h2 {
@@ -146,6 +146,8 @@ h2 {
 #carrinho-itens li {
   display: flex;
   justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100000;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.5rem;
@@ -177,21 +179,25 @@ h2 {
 
 #bag {
   opacity: 1;
+  transition: opacity 0.15s ease;
 }
 
 #bag-filled {
   position: absolute;
   left: 92%;
+  width: 30px;
   opacity: 0;
+  transition: opacity 0.15s ease;
 }
 
 .cart-count {
-  background-color: #e63946;
-  color: #fff;
+  background-color: #e3dbc6;
+  color: black;
   border-radius: 50%;
   padding: 0.2rem 0.6rem;
   font-size: 0.8rem;
   font-weight: bold;
+  user-select: none;
 }
 
 /* Seção de produtos */
@@ -349,90 +355,101 @@ footer {
   margin-top: 3rem;
 }
 
-/* Responsividade para telas menores */
+/* Responsividade */
 @media (max-width: 768px) {
-  header {
-    padding: 1rem;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
+  /* Cabeçalho */
   .header-container {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    padding: 1rem;
   }
 
   .nav ul {
     flex-direction: column;
-    align-items: flex-start;
     gap: 0.5rem;
   }
 
   .icons {
-    align-self: flex-end;
+    justify-content: flex-end;
+    gap: 0.5rem;
   }
 
-  #produtos {
-    padding: 2rem 1rem;
+  .logo img {
+    width: 80px;
   }
 
+  /* Seção de produtos */
   .produtos-container {
     flex-direction: column;
-    align-items: center;
     gap: 1.5rem;
   }
 
   .produto {
     width: 90%;
+    margin: 0 auto;
+    height: auto;
   }
 
   .produto img {
     height: auto;
   }
 
-  footer {
+  .produto p,
+  .produto .preco,
+  .produto button {
     font-size: 0.9rem;
+  }
+
+  /* Filtros */
+  .filtros-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .filtro {
+    width: 100%;
+  }
+
+  button#aplicar-filtros,
+  button#remover-filtros {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.5rem;
   }
 }
 
-/* Ajuste para telas extra pequenas (smartphones) */
 @media (max-width: 480px) {
-  header {
-    padding: 0.5rem;
+  /* Cabeçalho mais compacto */
+  .header-container {
+    align-items: center;
   }
 
-  .logo img {
-    width: 40px;
+  .nav ul {
+    display: none; /* Ocultar menu para adicionar um ícone de hambúrguer posteriormente */
   }
 
-  .nav ul li a {
-    font-size: 0.9rem;
+  .icons {
+    justify-content: space-between;
+    width: 100%;
   }
 
-  .icons img {
-    width: 20px;
+  /* Produtos mais compactos */
+  .produto {
+    width: 100%;
+    margin: 0 auto;
   }
 
-  .cart-count {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
-  }
-
+  /* Ajustar textos */
   h2 {
     font-size: 1.5rem;
   }
 
-  .produto p {
-    font-size: 0.9rem;
-  }
-
+  .produto p,
   .produto .preco {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
-  .produto button {
+  .finalizar-compra {
     font-size: 0.9rem;
-    padding: 0.6rem 0.8rem;
   }
 }
