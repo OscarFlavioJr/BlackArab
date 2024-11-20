@@ -206,10 +206,10 @@ h2 {
 }
 
 .produtos-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 20px;
 }
 
 .produto {
@@ -380,8 +380,7 @@ footer {
 
   /* Seção de produtos */
   .produtos-container {
-    flex-direction: column;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .produto {
@@ -451,5 +450,8 @@ footer {
 
   .finalizar-compra {
     font-size: 0.9rem;
+  }
+  .produtos-container {
+    grid-template-columns: 1fr;
   }
 }
