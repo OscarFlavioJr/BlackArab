@@ -251,19 +251,43 @@ h2 {
   padding: 0.7rem 1rem;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .produto button:hover {
-  background-color: #e0b800;
+  transform: scale(1.05);
+  transition: scale 0.3s ease;
+  color: darkslateblue;
+  transition: color 0.3s ease;
+}
+
+#arab {
+  background-color: #823d1c;
+  color: #e3dbc6;
+}
+
+#arab:hover {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+#florada {
+  background-color: #80cae5;
+  color: white;
+}
+
+#florada:hover {
+  color: black;
+  transition: color 0.3s ease;
 }
 
 .produto:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  height: 510px;
+  height: 540px;
 }
 
 .produto:hover .description {

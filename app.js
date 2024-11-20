@@ -7,6 +7,8 @@ const modal = document.querySelector(".modal");
 const lista = document.querySelector("#carrinho-itens");
 const pagamento = document.querySelector("#total-valor");
 const fecha = document.querySelector("#fechar-carrinho");
+const po = document.querySelectorAll("#po");
+const grao = document.querySelectorAll("#grao");
 
 let numero = 0;
 let total = 0;
@@ -16,7 +18,7 @@ const carrinho = {};
 comprar.forEach((button) => {
   button.addEventListener("click", function () {
     numero++;
-
+    
     contador.textContent = numero;
 
     if (numero === 0) {
